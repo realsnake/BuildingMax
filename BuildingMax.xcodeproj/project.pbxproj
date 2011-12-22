@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F666A94814A3116C0022C1FA /* CardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F666A94714A3116C0022C1FA /* CardInfoViewController.m */; };
 		F6A16C6F1495CE9200E0C6C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */; };
 		F6A16C711495CE9200E0C6C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C701495CE9200E0C6C5 /* Foundation.framework */; };
 		F6A16C731495CE9200E0C6C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C721495CE9200E0C6C5 /* CoreGraphics.framework */; };
@@ -20,28 +21,38 @@
 		F6A16C8C1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */; };
 		F6A16C8E1495CE9200E0C6C5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A16C8D1495CE9200E0C6C5 /* second.png */; };
 		F6A16C901495CE9200E0C6C5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A16C8F1495CE9200E0C6C5 /* second@2x.png */; };
+		F6BCCBDB14A06DD700C7F0A5 /* FireAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */; };
+		F6BCCBDE14A06E1F00C7F0A5 /* AirConditioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */; };
+		F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F666A94614A3116C0022C1FA /* CardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfoViewController.h; sourceTree = "<group>"; };
+		F666A94714A3116C0022C1FA /* CardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfoViewController.m; sourceTree = "<group>"; };
 		F6A16C6A1495CE9200E0C6C5 /* BuildingMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F6A16C701495CE9200E0C6C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6A16C721495CE9200E0C6C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F6A16C761495CE9200E0C6C5 /* BuildingMax-Info.plist */ = {isa = PBXFileReference; path = "BuildingMax-Info.plist"; sourceTree = "<group>"; };
+		F6A16C761495CE9200E0C6C5 /* BuildingMax-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BuildingMax-Info.plist"; sourceTree = "<group>"; };
 		F6A16C781495CE9200E0C6C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F6A16C7A1495CE9200E0C6C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F6A16C7C1495CE9200E0C6C5 /* BuildingMax-Prefix.pch */ = {isa = PBXFileReference; path = "BuildingMax-Prefix.pch"; sourceTree = "<group>"; };
-		F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */ = {isa = PBXFileReference; path = BuildingMaxAppDelegate.h; sourceTree = "<group>"; };
+		F6A16C7C1495CE9200E0C6C5 /* BuildingMax-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuildingMax-Prefix.pch"; sourceTree = "<group>"; };
+		F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildingMaxAppDelegate.h; sourceTree = "<group>"; };
 		F6A16C7E1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingMaxAppDelegate.m; sourceTree = "<group>"; };
 		F6A16C811495CE9200E0C6C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F6A16C831495CE9200E0C6C5 /* BuildingMaxFirstViewController.h */ = {isa = PBXFileReference; path = BuildingMaxFirstViewController.h; sourceTree = "<group>"; };
+		F6A16C831495CE9200E0C6C5 /* BuildingMaxFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildingMaxFirstViewController.h; sourceTree = "<group>"; };
 		F6A16C841495CE9200E0C6C5 /* BuildingMaxFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingMaxFirstViewController.m; sourceTree = "<group>"; };
 		F6A16C861495CE9200E0C6C5 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		F6A16C881495CE9200E0C6C5 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		F6A16C8A1495CE9200E0C6C5 /* BuildingMaxSecondViewController.h */ = {isa = PBXFileReference; path = BuildingMaxSecondViewController.h; sourceTree = "<group>"; };
+		F6A16C8A1495CE9200E0C6C5 /* BuildingMaxSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildingMaxSecondViewController.h; sourceTree = "<group>"; };
 		F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingMaxSecondViewController.m; sourceTree = "<group>"; };
 		F6A16C8D1495CE9200E0C6C5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		F6A16C8F1495CE9200E0C6C5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		F6BCCBD914A06DD700C7F0A5 /* FireAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireAlarmViewController.h; sourceTree = "<group>"; };
+		F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireAlarmViewController.m; sourceTree = "<group>"; };
+		F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirConditioningViewController.h; sourceTree = "<group>"; };
+		F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirConditioningViewController.m; sourceTree = "<group>"; };
+		F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segmentedBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +99,12 @@
 		F6A16C741495CE9200E0C6C5 /* BuildingMax */ = {
 			isa = PBXGroup;
 			children = (
+				F6BCCBD914A06DD700C7F0A5 /* FireAlarmViewController.h */,
+				F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */,
+				F666A94614A3116C0022C1FA /* CardInfoViewController.h */,
+				F666A94714A3116C0022C1FA /* CardInfoViewController.m */,
+				F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */,
+				F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */,
 				F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */,
 				F6A16C7E1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m */,
 				F6A16C801495CE9200E0C6C5 /* MainStoryboard.storyboard */,
@@ -99,6 +116,7 @@
 				F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */,
 				F6A16C8D1495CE9200E0C6C5 /* second.png */,
 				F6A16C8F1495CE9200E0C6C5 /* second@2x.png */,
+				F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */,
 				F6A16C751495CE9200E0C6C5 /* Supporting Files */,
 			);
 			path = BuildingMax;
@@ -171,6 +189,7 @@
 				F6A16C891495CE9200E0C6C5 /* first@2x.png in Resources */,
 				F6A16C8E1495CE9200E0C6C5 /* second.png in Resources */,
 				F6A16C901495CE9200E0C6C5 /* second@2x.png in Resources */,
+				F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +204,9 @@
 				F6A16C7F1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m in Sources */,
 				F6A16C851495CE9200E0C6C5 /* BuildingMaxFirstViewController.m in Sources */,
 				F6A16C8C1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m in Sources */,
+				F6BCCBDB14A06DD700C7F0A5 /* FireAlarmViewController.m in Sources */,
+				F6BCCBDE14A06E1F00C7F0A5 /* AirConditioningViewController.m in Sources */,
+				F666A94814A3116C0022C1FA /* CardInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +318,7 @@
 				F6A16C951495CE9200E0C6C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

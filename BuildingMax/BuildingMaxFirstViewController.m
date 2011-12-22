@@ -21,7 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Set a image as my custom title view. LOGO
+    UIImageView *myImageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"segmentedBackground.png"]] ;
+    self.navigationItem.titleView = myImageView;
+
 }
 
 - (void)viewDidUnload
@@ -34,6 +38,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // Bring on the navigationbar if it has hidden
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,6 +62,15 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark - prepare segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowFireAlarm"]) {
+        // do some preparation
+    }
 }
 
 @end
