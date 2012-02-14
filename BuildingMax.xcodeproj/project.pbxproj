@@ -10,7 +10,12 @@
 		F62D4B8A14DBC376006CEC89 /* CCTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8914DBC376006CEC89 /* CCTVViewController.m */; };
 		F62D4B8F14DBC68D006CEC89 /* CCTVPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */; };
 		F62D4B9114DBC779006CEC89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62D4B9014DBC778006CEC89 /* AVFoundation.framework */; };
-		F666A94814A3116C0022C1FA /* CardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F666A94714A3116C0022C1FA /* CardInfoViewController.m */; };
+		F63D43E414E4BF9C00632EBE /* CCTVAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D43E314E4BF9C00632EBE /* CCTVAddTableViewController.m */; };
+		F63D43EA14E4C2CE00632EBE /* CCTVDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D43E914E4C2CE00632EBE /* CCTVDetailTableViewController.m */; };
+		F63D440014E503C400632EBE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63D43FF14E503C400632EBE /* CoreData.framework */; };
+		F63D440814E509A700632EBE /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D440714E509A700632EBE /* CoreDataTableViewController.m */; };
+		F63D440B14E50EC000632EBE /* CCTVDevice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F63D440914E50EBF00632EBE /* CCTVDevice.xcdatamodeld */; };
+		F63D440E14E50F6700632EBE /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D440D14E50F6700632EBE /* Device.m */; };
 		F6A16C6F1495CE9200E0C6C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */; };
 		F6A16C711495CE9200E0C6C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C701495CE9200E0C6C5 /* Foundation.framework */; };
 		F6A16C731495CE9200E0C6C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C721495CE9200E0C6C5 /* CoreGraphics.framework */; };
@@ -24,10 +29,12 @@
 		F6A16C8C1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */; };
 		F6A16C8E1495CE9200E0C6C5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A16C8D1495CE9200E0C6C5 /* second.png */; };
 		F6A16C901495CE9200E0C6C5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A16C8F1495CE9200E0C6C5 /* second@2x.png */; };
+		F6B07E4314E8E73F00FDD485 /* CCTVHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B07E4214E8E73F00FDD485 /* CCTVHelper.m */; };
 		F6BCCBDB14A06DD700C7F0A5 /* FireAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */; };
 		F6BCCBDE14A06E1F00C7F0A5 /* AirConditioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */; };
 		F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */; };
 		F6E10AFC14E0CB210047B8BE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */; };
+		F6E8F6F214E24BC100729A9E /* CCTVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E8F6F114E24BC100729A9E /* CCTVTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +43,16 @@
 		F62D4B8D14DBC68D006CEC89 /* CCTVPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVPlayerLayerView.h; sourceTree = "<group>"; };
 		F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVPlayerLayerView.m; sourceTree = "<group>"; };
 		F62D4B9014DBC778006CEC89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		F666A94614A3116C0022C1FA /* CardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfoViewController.h; sourceTree = "<group>"; };
-		F666A94714A3116C0022C1FA /* CardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfoViewController.m; sourceTree = "<group>"; };
+		F63D43E214E4BF9C00632EBE /* CCTVAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVAddTableViewController.h; sourceTree = "<group>"; };
+		F63D43E314E4BF9C00632EBE /* CCTVAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVAddTableViewController.m; sourceTree = "<group>"; };
+		F63D43E814E4C2CE00632EBE /* CCTVDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVDetailTableViewController.h; sourceTree = "<group>"; };
+		F63D43E914E4C2CE00632EBE /* CCTVDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVDetailTableViewController.m; sourceTree = "<group>"; };
+		F63D43FF14E503C400632EBE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F63D440614E509A700632EBE /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		F63D440714E509A700632EBE /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		F63D440A14E50EC000632EBE /* CCTVDevice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CCTVDevice.xcdatamodel; sourceTree = "<group>"; };
+		F63D440C14E50F6700632EBE /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = ../Device.h; sourceTree = "<group>"; };
+		F63D440D14E50F6700632EBE /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = ../Device.m; sourceTree = "<group>"; };
 		F6A16C6A1495CE9200E0C6C5 /* BuildingMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F6A16C701495CE9200E0C6C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,12 +72,16 @@
 		F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingMaxSecondViewController.m; sourceTree = "<group>"; };
 		F6A16C8D1495CE9200E0C6C5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		F6A16C8F1495CE9200E0C6C5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		F6B07E4114E8E73F00FDD485 /* CCTVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVHelper.h; sourceTree = "<group>"; };
+		F6B07E4214E8E73F00FDD485 /* CCTVHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVHelper.m; sourceTree = "<group>"; };
 		F6BCCBD914A06DD700C7F0A5 /* FireAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireAlarmViewController.h; sourceTree = "<group>"; };
 		F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireAlarmViewController.m; sourceTree = "<group>"; };
 		F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirConditioningViewController.h; sourceTree = "<group>"; };
 		F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirConditioningViewController.m; sourceTree = "<group>"; };
 		F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segmentedBackground.png; sourceTree = "<group>"; };
 		F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F6E8F6F014E24BC100729A9E /* CCTVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVTableViewController.h; sourceTree = "<group>"; };
+		F6E8F6F114E24BC100729A9E /* CCTVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63D440014E503C400632EBE /* CoreData.framework in Frameworks */,
 				F6E10AFC14E0CB210047B8BE /* CoreMedia.framework in Frameworks */,
 				F62D4B9114DBC779006CEC89 /* AVFoundation.framework in Frameworks */,
 				F6A16C6F1495CE9200E0C6C5 /* UIKit.framework in Frameworks */,
@@ -84,17 +104,55 @@
 		F62D4B8C14DBC61A006CEC89 /* CCTV */ = {
 			isa = PBXGroup;
 			children = (
+				F63D43E714E4BFCD00632EBE /* CCTVAVPlayer */,
+				F63D43E614E4BFB900632EBE /* CCTVTableView */,
+			);
+			name = CCTV;
+			sourceTree = "<group>";
+		};
+		F63D43E614E4BFB900632EBE /* CCTVTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F63D440514E5097300632EBE /* CCTV CoreData */,
+				F6E8F6F014E24BC100729A9E /* CCTVTableViewController.h */,
+				F6E8F6F114E24BC100729A9E /* CCTVTableViewController.m */,
+				F63D43E214E4BF9C00632EBE /* CCTVAddTableViewController.h */,
+				F63D43E314E4BF9C00632EBE /* CCTVAddTableViewController.m */,
+				F63D43E814E4C2CE00632EBE /* CCTVDetailTableViewController.h */,
+				F63D43E914E4C2CE00632EBE /* CCTVDetailTableViewController.m */,
+				F6B07E4114E8E73F00FDD485 /* CCTVHelper.h */,
+				F6B07E4214E8E73F00FDD485 /* CCTVHelper.m */,
+			);
+			name = CCTVTableView;
+			sourceTree = "<group>";
+		};
+		F63D43E714E4BFCD00632EBE /* CCTVAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
 				F62D4B8814DBC376006CEC89 /* CCTVViewController.h */,
 				F62D4B8914DBC376006CEC89 /* CCTVViewController.m */,
 				F62D4B8D14DBC68D006CEC89 /* CCTVPlayerLayerView.h */,
 				F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */,
 			);
-			name = CCTV;
+			name = CCTVAVPlayer;
+			sourceTree = "<group>";
+		};
+		F63D440514E5097300632EBE /* CCTV CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F63D440614E509A700632EBE /* CoreDataTableViewController.h */,
+				F63D440714E509A700632EBE /* CoreDataTableViewController.m */,
+				F63D440914E50EBF00632EBE /* CCTVDevice.xcdatamodeld */,
+				F63D440C14E50F6700632EBE /* Device.h */,
+				F63D440D14E50F6700632EBE /* Device.m */,
+			);
+			name = "CCTV CoreData";
 			sourceTree = "<group>";
 		};
 		F6A16C5F1495CE9100E0C6C5 = {
 			isa = PBXGroup;
 			children = (
+				F63D43FF14E503C400632EBE /* CoreData.framework */,
 				F6A16C741495CE9200E0C6C5 /* BuildingMax */,
 				F6A16C6D1495CE9200E0C6C5 /* Frameworks */,
 				F6A16C6B1495CE9200E0C6C5 /* Products */,
@@ -126,8 +184,6 @@
 			children = (
 				F6BCCBD914A06DD700C7F0A5 /* FireAlarmViewController.h */,
 				F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */,
-				F666A94614A3116C0022C1FA /* CardInfoViewController.h */,
-				F666A94714A3116C0022C1FA /* CardInfoViewController.m */,
 				F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */,
 				F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */,
 				F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */,
@@ -232,9 +288,15 @@
 				F6A16C8C1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m in Sources */,
 				F6BCCBDB14A06DD700C7F0A5 /* FireAlarmViewController.m in Sources */,
 				F6BCCBDE14A06E1F00C7F0A5 /* AirConditioningViewController.m in Sources */,
-				F666A94814A3116C0022C1FA /* CardInfoViewController.m in Sources */,
 				F62D4B8A14DBC376006CEC89 /* CCTVViewController.m in Sources */,
 				F62D4B8F14DBC68D006CEC89 /* CCTVPlayerLayerView.m in Sources */,
+				F6E8F6F214E24BC100729A9E /* CCTVTableViewController.m in Sources */,
+				F63D43E414E4BF9C00632EBE /* CCTVAddTableViewController.m in Sources */,
+				F63D43EA14E4C2CE00632EBE /* CCTVDetailTableViewController.m in Sources */,
+				F63D440814E509A700632EBE /* CoreDataTableViewController.m in Sources */,
+				F63D440B14E50EC000632EBE /* CCTVDevice.xcdatamodeld in Sources */,
+				F63D440E14E50F6700632EBE /* Device.m in Sources */,
+				F6B07E4314E8E73F00FDD485 /* CCTVHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +411,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F63D440914E50EBF00632EBE /* CCTVDevice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F63D440A14E50EC000632EBE /* CCTVDevice.xcdatamodel */,
+			);
+			currentVersion = F63D440A14E50EC000632EBE /* CCTVDevice.xcdatamodel */;
+			path = CCTVDevice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F6A16C611495CE9100E0C6C5 /* Project object */;
 }
