@@ -3,7 +3,7 @@
     <entity name="Device" representedClassName="Device" syncable="YES">
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ip" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="port" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="port" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="Device" positionX="160" positionY="192" width="128" height="90"/>

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCTVAddTableViewController.h"
+#import "CCTVEditTableViewController.h"
+#import "Device.h"
 
-@interface CCTVDetailTableViewController : UITableViewController
-
+@interface CCTVDetailTableViewController : CCTVAddTableViewController <CCTVEditDelegate>
+@property (nonatomic, strong) Device *selectedDevice;
 @end

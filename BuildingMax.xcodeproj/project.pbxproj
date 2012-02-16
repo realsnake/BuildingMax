@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60179FA14EB88E700CB0D32 /* CCTVEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60179F914EB88E700CB0D32 /* CCTVEditTableViewController.m */; };
 		F62D4B8A14DBC376006CEC89 /* CCTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8914DBC376006CEC89 /* CCTVViewController.m */; };
 		F62D4B8F14DBC68D006CEC89 /* CCTVPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */; };
 		F62D4B9114DBC779006CEC89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62D4B9014DBC778006CEC89 /* AVFoundation.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F60179F814EB88E700CB0D32 /* CCTVEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVEditTableViewController.h; sourceTree = "<group>"; };
+		F60179F914EB88E700CB0D32 /* CCTVEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVEditTableViewController.m; sourceTree = "<group>"; };
 		F62D4B8814DBC376006CEC89 /* CCTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVViewController.h; sourceTree = "<group>"; };
 		F62D4B8914DBC376006CEC89 /* CCTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVViewController.m; sourceTree = "<group>"; };
 		F62D4B8D14DBC68D006CEC89 /* CCTVPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVPlayerLayerView.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				F63D43E914E4C2CE00632EBE /* CCTVDetailTableViewController.m */,
 				F6B07E4114E8E73F00FDD485 /* CCTVHelper.h */,
 				F6B07E4214E8E73F00FDD485 /* CCTVHelper.m */,
+				F60179F814EB88E700CB0D32 /* CCTVEditTableViewController.h */,
+				F60179F914EB88E700CB0D32 /* CCTVEditTableViewController.m */,
 			);
 			name = CCTVTableView;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				F63D440B14E50EC000632EBE /* CCTVDevice.xcdatamodeld in Sources */,
 				F63D440E14E50F6700632EBE /* Device.m in Sources */,
 				F6B07E4314E8E73F00FDD485 /* CCTVHelper.m in Sources */,
+				F60179FA14EB88E700CB0D32 /* CCTVEditTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

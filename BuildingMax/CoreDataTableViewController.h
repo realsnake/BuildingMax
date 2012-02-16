@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
+#define ENTITYNAME  @"Device"
+#define DEVICEINFO  @"info"
+
+#define SECTION_INFO    0
+#define SECTION_IP      1
+#define SECTION_PORT    2
+#define SECTION_NUMBER  3
+
+#define ROWS_IN_SECTION 1
+
 @interface CoreDataTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 // The controller (this class fetches nothing if this is not set).

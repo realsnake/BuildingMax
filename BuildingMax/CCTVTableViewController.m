@@ -9,14 +9,16 @@
 #import "CCTVTableViewController.h"
 #import "Device.h"
 #import "CCTVHelper.h"
+#import "CCTVDetailTableViewController.h"
 
-
-#define ENTITYNAME  @"Device"
-#define DEVICEINFO  @"info"
+@interface CCTVTableViewController ()
+@property (nonatomic,strong) Device *deviceToPush;
+@end
 
 @implementation CCTVTableViewController
 
 @synthesize CCTVDatabase = _CCTVDatabase;
+@synthesize deviceToPush = _deviceToPush;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -84,23 +86,29 @@
 {
     // Reload don't actually load the data. We reley on reload by viewWillAppear.
     //[self.tableView reloadData];
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - prepare for segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // Show add view by modal style.
     if ([segue.identifier isEqualToString: @"ShowAddView"]) {
         if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
             UINavigationController *modalNavigationController = (UINavigationController *)segue.destinationViewController;
             
             // The root view Controller is CCTVAddTableViewController.
-            if([[modalNavigationController.viewControllers objectAtIndex:0] isKindOfClass:[UITableViewController class]])
+            if([[modalNavigationController.viewControllers objectAtIndex:0] isKindOfClass:[CCTVDetailTableViewController class]])
             {
                 CCTVAddTableViewController *modalAddTVC = (CCTVAddTableViewController *)[modalNavigationController.viewControllers objectAtIndex:0];
                 // Set self to be CCTVAddDelegate.
                 modalAddTVC.delegate = self;
             }
+        }
+    }
+    // Show detail view by push style.
+    else if ([segue.identifier isEqualToString:@"ShowDetailView"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setSelectedDevice:)]) {
+            [segue.destinationViewController setSelectedDevice:self.deviceToPush];
         }
     }
 }
@@ -133,56 +141,29 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // Run on document context thread, possibly the main thread.
+        [self.fetchedResultsController.managedObjectContext performBlock:^{
+            [self.fetchedResultsController.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        }];
+        
+        [CCTVHelper openSharedManagedDocumentUsingBlock:^(UIManagedDocument *sharedManagedDocument){
+            [sharedManagedDocument saveToURL:sharedManagedDocument.fileURL
+                            forSaveOperation:UIDocumentSaveForOverwriting
+                           completionHandler:NULL];
+        }];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+// Called before prepareToSegue to setup device to push.
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    self.deviceToPush = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    return indexPath;
 }
 
 @end

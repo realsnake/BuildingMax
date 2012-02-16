@@ -99,17 +99,17 @@
         <scene sceneID="di5-IB-Shd">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3K-YS-wh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="zH0-k6-pKM" customClass="CCTVTableViewController" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="zH0-k6-pKM" customClass="CCTVTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3p5-yq-Eqm">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainViewID" textLabel="tlO-dH-uLw" detailTextLabel="5TW-9y-w1b" style="IBUITableViewCellStyleSubtitle" id="RAL-3t-VIh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainViewID" textLabel="tlO-dH-uLw" detailTextLabel="5TW-9y-w1b" style="IBUITableViewCellStyleSubtitle" id="RAL-3t-VIh">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlO-dH-uLw">
@@ -130,6 +130,9 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="YJp-gR-P9Q" kind="push" identifier="ShowDetailView" id="BTG-2k-ScF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -147,39 +150,49 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1576" y="633"/>
+            <point key="canvasLocation" x="1546" y="198"/>
         </scene>
         <scene sceneID="CCZ-qq-7Mr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-95-gg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="ohr-wE-Gqy" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YWP-HO-Wrv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <tableViewController id="ohr-wE-Gqy" customClass="CCTVEditTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DRL-Vv-kBz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Kcu-Ng-COe">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="EditViewID" id="ua4-sl-SQJ">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="ohr-wE-Gqy" id="jp5-qk-Ezt"/>
-                            <outlet property="delegate" destination="ohr-wE-Gqy" id="lqo-Qr-SH5"/>
+                            <outlet property="dataSource" destination="ohr-wE-Gqy" id="fzY-do-ac1"/>
+                            <outlet property="delegate" destination="ohr-wE-Gqy" id="rTv-kV-nPX"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="编辑设备" id="eTQ-LB-74J">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gnE-Ne-rUc"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hLd-9y-ceg"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="gnE-Ne-rUc">
+                            <connections>
+                                <action selector="cancel:" destination="ohr-wE-Gqy" id="VXi-uP-jyd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="hLd-9y-ceg">
+                            <connections>
+                                <action selector="save:" destination="ohr-wE-Gqy" id="HmP-1k-85u"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2453" y="1"/>
+            <point key="canvasLocation" x="2485" y="103"/>
         </scene>
         <scene sceneID="15">
             <objects>
@@ -348,7 +361,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1986" y="994"/>
+            <point key="canvasLocation" x="2089" y="621"/>
         </scene>
         <scene sceneID="dYS-un-RNf">
             <objects>
@@ -377,12 +390,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加设备" id="EpT-Vh-LN1">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eWU-G6-bTE">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="eWU-G6-bTE">
                             <connections>
                                 <action selector="cancel:" destination="ado-1J-d1H" id="1GL-Qh-NRE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6PB-VN-koe">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="6PB-VN-koe">
                             <connections>
                                 <action selector="save:" destination="ado-1J-d1H" id="fgh-hx-Kyq"/>
                             </connections>
@@ -390,14 +403,14 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2409" y="641"/>
+            <point key="canvasLocation" x="2485" y="710"/>
         </scene>
         <scene sceneID="0z7-EF-eBY">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUo-c7-Gvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="YJp-gR-P9Q" customClass="CCTVDetailTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qTZ-7K-pTk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qTZ-7K-pTk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -424,21 +437,79 @@
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="设备信息" id="xTt-fF-lJ4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="MHs-Tb-F5O">
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="MHs-Tb-F5O">
                             <connections>
-                                <segue destination="ohr-wE-Gqy" kind="push" id="kHP-gb-lI5"/>
+                                <segue destination="yUc-N7-9is" kind="modal" identifier="ShowEditView" id="dhp-l3-USp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1964" y="28"/>
+            <point key="canvasLocation" x="2052" y="66"/>
+        </scene>
+        <scene sceneID="cBw-Fy-riZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqz-C6-CF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="yUc-N7-9is" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NtC-UN-kac">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ohr-wE-Gqy" kind="relationship" relationship="rootViewController" id="PgY-kO-rpA"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2405" y="4"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AirConditioningViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AirConditioningViewController.h"/>
+        </class>
+        <class className="BuildingMaxFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMaxFirstViewController.h"/>
+        </class>
+        <class className="CCTVAddTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVAddTableViewController.h"/>
+        </class>
+        <class className="CCTVDetailTableViewController" superclassName="CCTVAddTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVDetailTableViewController.h"/>
+        </class>
+        <class className="CCTVEditTableViewController" superclassName="CCTVAddTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVEditTableViewController.h"/>
+        </class>
+        <class className="CCTVPlayerLayerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVPlayerLayerView.h"/>
+        </class>
+        <class className="CCTVTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVTableViewController.h"/>
+        </class>
+        <class className="CCTVViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="CCTVPlayerLayerView" candidateClass="CCTVPlayerLayerView"/>
+                <relationship kind="outlet" name="URLTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loadButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="timeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="FireAlarmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FireAlarmViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

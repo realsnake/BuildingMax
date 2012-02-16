@@ -13,10 +13,16 @@
 
 + (void)openSharedManagedDocumentUsingBlock:(void (^)(UIManagedDocument *sharedManagedDocument))completionBlock
 {
+    // This is the shared globle UIManagedDocument through this app.
+    static UIManagedDocument *sharedDoc;
+    
     NSURL *documentURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *databaseURL = [documentURL URLByAppendingPathComponent:@"CCTV Database"];
     
-    UIManagedDocument *sharedDoc = [[UIManagedDocument alloc] initWithFileURL:databaseURL];
+    if (!sharedDoc) {
+        sharedDoc = [[UIManagedDocument alloc] initWithFileURL:databaseURL];
+
+    }
     // Create a new database if not exist
     if (![[NSFileManager defaultManager] fileExistsAtPath:[sharedDoc.fileURL path]]) {
         [sharedDoc saveToURL:sharedDoc.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){

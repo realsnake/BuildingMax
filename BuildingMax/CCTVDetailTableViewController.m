@@ -7,18 +7,12 @@
 //
 
 #import "CCTVDetailTableViewController.h"
-
+#import "CCTVEditTableViewController.h"
+#import "CCTVHelper.h"
 
 @implementation CCTVDetailTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize selectedDevice = _selectedDevice;
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,17 +22,41 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark - delete button handler
+- (void)deleteDevice
+{
+    [CCTVHelper openSharedManagedDocumentUsingBlock:^(UIManagedDocument *sharedManagedDocument) {
+        if (sharedManagedDocument) {
+            // Run on document context thread, possibly the main thread.
+            [sharedManagedDocument.managedObjectContext performBlock:^{
+                [sharedManagedDocument.managedObjectContext deleteObject:self.selectedDevice];
+            }];
+            
+            // Run on the caller thread, should be the main thread.
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIButton * deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteButton.userInteractionEnabled = YES;
+    deleteButton.frame = CGRectMake(10, 0, 300, 40);
+    deleteButton.backgroundColor = [UIColor redColor];
+    [deleteButton setTitle:@"删 除" forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(deleteDevice) forControlEvents:UIControlEventTouchUpInside];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
+    [footView addSubview:deleteButton];
+    
+    self.tableView.tableFooterView = footView;
+    self.tableView.tableFooterView.userInteractionEnabled = YES;
 }
 
 - (void)viewDidUnload
@@ -48,26 +66,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -75,45 +73,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 3;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 1;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSString *sectionHeader;
-    switch (section) {
-        case 0:
-        {
-            sectionHeader = @"描述";
-            break;
-        }
-        case 1:
-        {
-            sectionHeader = @"IP地址";
-            break;
-        }
-        case 2:
-        {
-            sectionHeader = @"端口号";
-            break;
-        }
-        default:
-            break;
-    }
-    
-    return sectionHeader;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DetailInfo";
@@ -123,60 +82,51 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = @"Fill in with data.";
+    switch (indexPath.section) {
+        case SECTION_INFO:
+        {
+            cell.textLabel.text = self.selectedDevice.info;
+            break;
+        }
+        case SECTION_IP:
+        {
+            cell.textLabel.text = self.selectedDevice.ip;
+            break;
+        }
+        case SECTION_PORT:
+        {
+            cell.textLabel.text = [self.selectedDevice.port stringValue];
+            break;
+        }
+        default:
+            break;
+    }
+
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - prepare segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    if ([segue.identifier isEqualToString:@"ShowEditView"]) {
+        if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *destinationNavController = segue.destinationViewController;
+            
+            // top view controller should be CCTVEditViewController
+            if ([destinationNavController.topViewController respondsToSelector:@selector(setEditDevice:)]) {
+                CCTVEditTableViewController *editTVC = (CCTVEditTableViewController *)destinationNavController.topViewController;
+                [editTVC setEditDevice:self.selectedDevice];
+                editTVC.editDelegate = self;
+            }
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+        }
+    }
 }
 
+#pragma mark - CCTVEditDelegte
+- (void)saveForEditDevice:(CCTVEditTableViewController *)sender
+{
+    self.selectedDevice = sender.editDevice;
+    [self.tableView reloadData];
+}
 @end

@@ -1,3 +1,4 @@
+
 //
 //  CCTVAddTableViewController.m
 //  BuildingMax
@@ -10,65 +11,20 @@
 #import "Device.h"
 #import "CCTVHelper.h"
 
-#define SECTION_INFO    0
-#define SECTION_IP      1
-#define SECTION_PORT    2
-#define SECTION_NUMBER  3
+@interface CCTVAddTableViewController()
+
+@property (nonatomic, strong) NSString *addDeviceInfo;
+@property (nonatomic, strong) NSString *addDeviceIP;
+@property (nonatomic, strong) NSNumber *addDevicePort;
+
+@end
 
 @implementation CCTVAddTableViewController
 
 @synthesize delegate = _delegate;
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
+@synthesize addDeviceInfo = _addDeviceInfo;
+@synthesize addDeviceIP = _addDeviceIP;
+@synthesize addDevicePort = _addDevicePort;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -101,14 +57,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return SECTION_NUMBER;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 1;
+    return ROWS_IN_SECTION;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -175,32 +129,52 @@
         {
             textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             break;
-        }
-        case 3:
-        {
-            NSLog(@"text3 tag is %d",textField.tag);
-            break;
-        }
-            
+        }            
         default:
             break;
     }
-    if (3 == indexPath.section) {
-        cell.textLabel.text = nil;
-        UIButton * deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        deleteButton.frame = cell.contentView.frame;
-        [deleteButton setTitle:@"删除" forState:UIControlStateNormal];
-        [cell.contentView addSubview:deleteButton];
-    }
+
     return cell;
 }
 
 #pragma mark - dissmiss modal view by button actions
+- (BOOL)isRepeatDevice:(UIManagedDocument *)doc
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITYNAME];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:DEVICEINFO
+                                                                                          ascending:YES]];
+    NSArray *deviceArray = [doc.managedObjectContext executeFetchRequest:fetchRequest error:nil]; 
+    
+    for (Device * newDevice in deviceArray) {
+        if (([newDevice.info isEqualToString: self.addDeviceInfo]) && 
+            ([newDevice.ip isEqualToString: self.addDeviceIP]) &&
+            ([newDevice.port intValue] == [self.addDevicePort intValue])) 
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
 
 - (void)saveToDatabaseWithDoc:(UIManagedDocument *)doc
 {
-    Device *deviceToSave = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:doc.managedObjectContext];
+    Device *deviceToSave = [NSEntityDescription insertNewObjectForEntityForName:ENTITYNAME inManagedObjectContext:doc.
+                            managedObjectContext];
     
+    deviceToSave.info = self.addDeviceInfo;
+    deviceToSave.ip = self.addDeviceIP;
+    deviceToSave.port = self.addDevicePort;
+    
+    // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+    // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+    // because if we quit the app before autosave happens, then it'll come up blank next time we run
+    // this is what it would look like ...
+    [doc saveToURL:doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+}
+
+- (BOOL)isTextFieldBlank
+{
     // Find all the UITextField in the subviews
     NSMutableArray *textFieldArray = [[NSMutableArray alloc] init];
     for (UITableViewCell *tableViewCell in self.view.subviews ) {
@@ -214,41 +188,53 @@
     }
     
     for (UITextField *textField in textFieldArray) {
-        switch (textField.tag) {
-            case SECTION_INFO:
-            {
-                deviceToSave.info = textField.text;
-                break;
-            }
-            case SECTION_IP:
-            {      
-                deviceToSave.ip = textField.text;
-                break;
-            }
-            case SECTION_PORT:
-            {
-                deviceToSave.port = [NSNumber numberWithInt:[textField.text intValue]];
-                break;
-            }
-            default:
-                break;
+        // Blank field is not allowed.
+        if (0 == [textField.text length]) {
+            return NO;
         }
     }
-    // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
-    // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
-    // because if we quit the app before autosave happens, then it'll come up blank next time we run
-    // this is what it would look like ...
-    [doc saveToURL:doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+    
+    return YES;
+}
+
+- (void)presentAlertView:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alertView show];
+    
 }
 
 - (IBAction)save:(id)sender
 {
-    [CCTVHelper openSharedManagedDocumentUsingBlock:^(UIManagedDocument *sharedManagedDocument) {
-        [sharedManagedDocument.managedObjectContext performBlock:^{
-            [self saveToDatabaseWithDoc:sharedManagedDocument];
+    if ([self isTextFieldBlank])
+    {
+        [CCTVHelper openSharedManagedDocumentUsingBlock:^(UIManagedDocument *sharedManagedDocument) {
+            if (sharedManagedDocument) {
+                [sharedManagedDocument.managedObjectContext performBlock:^{
+                    if (![self isRepeatDevice:sharedManagedDocument]) {
+                        [self saveToDatabaseWithDoc:sharedManagedDocument];
+                    }
+                }];
+            }
         }];
-    }];
-    [self.delegate AddNewEntity:self];
+        
+        // Not used for now.
+        //[self.delegate AddNewEntity:self];
+
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    else
+    {
+        NSString *localizedDescription = NSLocalizedString(@"请填写完整", @"信息不完整描述");
+        NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+        NSError *blankError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+        [self presentAlertView:blankError];
+
+    }
+    
 }
 
 - (IBAction)cancel:(id)sender 
@@ -256,4 +242,50 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark - UITextField delegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    switch (textField.tag)
+    {
+        case SECTION_INFO:
+        {
+            self.addDeviceInfo = textField.text;
+            break;
+        }
+            
+        case SECTION_IP:
+        {
+            self.addDeviceIP = textField.text;
+            break;
+        }
+            
+        case SECTION_PORT:
+        {
+            self.addDevicePort = [NSNumber numberWithInt:[textField.text intValue]];
+            
+            // we should not alert if no input, say user canceled.
+            if ([textField.text length]) {
+                NSCharacterSet *setWithoutNumbers = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+                NSRange range = [textField.text rangeOfCharacterFromSet:setWithoutNumbers];
+                int portNumber = [textField.text intValue];
+                
+                // Port valid value is between 0 and 65535
+                // Only digital number is allowed.
+                if ((portNumber > 65535 || portNumber <= 0) || (range.location != NSNotFound))
+                {
+                    NSString *localizedDescription = NSLocalizedString(@"端口号无效", @"端口号无效描述");
+                    NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+                    NSError *portError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+                    [self presentAlertView:portError];
+                    
+                    textField.text = nil;
+                }
+            }
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
 @end
