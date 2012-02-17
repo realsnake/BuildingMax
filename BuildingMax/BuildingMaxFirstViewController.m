@@ -25,6 +25,8 @@
     // Set a image as my custom title view. LOGO
     UIImageView *myImageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"segmentedBackground.png"]] ;
     self.navigationItem.titleView = myImageView;
+    
+    self.view.autoresizesSubviews = YES;
 
 }
 
@@ -43,24 +45,10 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES; //(interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 #pragma mark - prepare segue
