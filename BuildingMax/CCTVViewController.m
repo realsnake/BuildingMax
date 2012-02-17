@@ -20,6 +20,7 @@
 @synthesize toolbar = _toolbar;
 @synthesize playButton = _playButton;
 @synthesize pauseButton = _pauseButton;
+@synthesize fullScreenButton = _fullScreenButton;
 @synthesize timeSlider = _timeSlider;
 @synthesize player = _player;
 @synthesize playerItem = _playerItem;
@@ -368,6 +369,9 @@ NSString *kRateKey	= @"rate";
 
                 [self enableScrubber];
                 [self enablePlayerButtons];
+                
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
                                 
                 /* Set the AVPlayerLayer on the view to allow the AVPlayer to play its content. */
                 [self.CCTVPlayerLayerView.playerLayer setPlayer:self.player];
@@ -433,6 +437,7 @@ NSString *kRateKey	= @"rate";
             }];
         }
     }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (IBAction)playButtonPressed:(UIBarButtonItem *)sender 
@@ -473,7 +478,7 @@ NSString *kRateKey	= @"rate";
     
     UIBarButtonItem *scrubberItem = [[UIBarButtonItem alloc] initWithCustomView:self.timeSlider];
     UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    self.toolbar.items = [NSArray arrayWithObjects:self.playButton, flexItem, scrubberItem, nil];
+    self.toolbar.items = [NSArray arrayWithObjects:self.playButton, flexItem, scrubberItem, flexItem, self.fullScreenButton, nil];
 }
 
 
@@ -486,6 +491,7 @@ NSString *kRateKey	= @"rate";
     [self setPauseButton:nil];
     [self setCCTVPlayerLayerView:nil];
     [self setTimeSlider:nil];
+    [self setFullScreenButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -493,8 +499,20 @@ NSString *kRateKey	= @"rate";
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+
+
+- (IBAction)fullScreenButtonPressed:(id)sender 
+{
+    
+    self.CCTVPlayerLayerView.frame = self.view.frame;
+    self.loadButton.hidden = YES;
+    self.URLTextField.hidden = YES;
+
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
 }
 
 @end

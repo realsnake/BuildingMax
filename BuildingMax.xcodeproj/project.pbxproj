@@ -36,6 +36,7 @@
 		F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */; };
 		F6E10AFC14E0CB210047B8BE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */; };
 		F6E8F6F214E24BC100729A9E /* CCTVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E8F6F114E24BC100729A9E /* CCTVTableViewController.m */; };
+		F6F3A4D814EE4ABD00546574 /* Galaxy-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6F3A4D714EE4ABD00546574 /* Galaxy-1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F6E8F6F014E24BC100729A9E /* CCTVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVTableViewController.h; sourceTree = "<group>"; };
 		F6E8F6F114E24BC100729A9E /* CCTVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVTableViewController.m; sourceTree = "<group>"; };
+		F6F3A4D714EE4ABD00546574 /* Galaxy-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Galaxy-1.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,6 @@
 		F6A16C5F1495CE9100E0C6C5 = {
 			isa = PBXGroup;
 			children = (
-				F63D43FF14E503C400632EBE /* CoreData.framework */,
 				F6A16C741495CE9200E0C6C5 /* BuildingMax */,
 				F6A16C6D1495CE9200E0C6C5 /* Frameworks */,
 				F6A16C6B1495CE9200E0C6C5 /* Products */,
@@ -175,6 +176,7 @@
 		F6A16C6D1495CE9200E0C6C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F63D43FF14E503C400632EBE /* CoreData.framework */,
 				F62D4B9014DBC778006CEC89 /* AVFoundation.framework */,
 				F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */,
 				F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */,
@@ -191,19 +193,13 @@
 				F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */,
 				F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */,
 				F6BCCBDD14A06E1F00C7F0A5 /* AirConditioningViewController.m */,
-				F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */,
-				F6A16C7E1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m */,
 				F6A16C831495CE9200E0C6C5 /* BuildingMaxFirstViewController.h */,
 				F6A16C841495CE9200E0C6C5 /* BuildingMaxFirstViewController.m */,
-				F62D4B8C14DBC61A006CEC89 /* CCTV */,
-				F6A16C801495CE9200E0C6C5 /* MainStoryboard.storyboard */,
-				F6A16C861495CE9200E0C6C5 /* first.png */,
-				F6A16C881495CE9200E0C6C5 /* first@2x.png */,
 				F6A16C8A1495CE9200E0C6C5 /* BuildingMaxSecondViewController.h */,
 				F6A16C8B1495CE9200E0C6C5 /* BuildingMaxSecondViewController.m */,
-				F6A16C8D1495CE9200E0C6C5 /* second.png */,
-				F6A16C8F1495CE9200E0C6C5 /* second@2x.png */,
-				F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */,
+				F6A16C801495CE9200E0C6C5 /* MainStoryboard.storyboard */,
+				F62D4B8C14DBC61A006CEC89 /* CCTV */,
+				F6F3A4C914EE28E600546574 /* Resource */,
 				F6A16C751495CE9200E0C6C5 /* Supporting Files */,
 			);
 			path = BuildingMax;
@@ -212,12 +208,27 @@
 		F6A16C751495CE9200E0C6C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */,
+				F6A16C7E1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m */,
 				F6A16C761495CE9200E0C6C5 /* BuildingMax-Info.plist */,
 				F6A16C771495CE9200E0C6C5 /* InfoPlist.strings */,
 				F6A16C7A1495CE9200E0C6C5 /* main.m */,
 				F6A16C7C1495CE9200E0C6C5 /* BuildingMax-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6F3A4C914EE28E600546574 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F6F3A4D714EE4ABD00546574 /* Galaxy-1.jpg */,
+				F6A16C861495CE9200E0C6C5 /* first.png */,
+				F6A16C881495CE9200E0C6C5 /* first@2x.png */,
+				F6A16C8D1495CE9200E0C6C5 /* second.png */,
+				F6A16C8F1495CE9200E0C6C5 /* second@2x.png */,
+				F6BCCBE114A07A9F00C7F0A5 /* segmentedBackground.png */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				F6A16C8E1495CE9200E0C6C5 /* second.png in Resources */,
 				F6A16C901495CE9200E0C6C5 /* second@2x.png in Resources */,
 				F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */,
+				F6F3A4D814EE4ABD00546574 /* Galaxy-1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

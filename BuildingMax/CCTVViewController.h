@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *playButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fullScreenButton;
 @property (weak, nonatomic) IBOutlet UISlider *timeSlider;
 
 @end

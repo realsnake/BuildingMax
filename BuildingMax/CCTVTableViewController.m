@@ -166,4 +166,9 @@
     return indexPath;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"ShowAVPlayerView" sender:self];
+}
+
 @end
