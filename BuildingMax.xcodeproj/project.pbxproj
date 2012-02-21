@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F60179FA14EB88E700CB0D32 /* CCTVEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60179F914EB88E700CB0D32 /* CCTVEditTableViewController.m */; };
+		F60CC91C14F3381800DCA7B6 /* CCTVMPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60CC91B14F3381800DCA7B6 /* CCTVMPViewController.m */; };
+		F60CC91E14F33A7F00DCA7B6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60CC91D14F33A7F00DCA7B6 /* MediaPlayer.framework */; };
 		F62D4B8A14DBC376006CEC89 /* CCTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8914DBC376006CEC89 /* CCTVViewController.m */; };
 		F62D4B8F14DBC68D006CEC89 /* CCTVPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */; };
 		F62D4B9114DBC779006CEC89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62D4B9014DBC778006CEC89 /* AVFoundation.framework */; };
@@ -42,6 +44,9 @@
 /* Begin PBXFileReference section */
 		F60179F814EB88E700CB0D32 /* CCTVEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVEditTableViewController.h; sourceTree = "<group>"; };
 		F60179F914EB88E700CB0D32 /* CCTVEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVEditTableViewController.m; sourceTree = "<group>"; };
+		F60CC91A14F3381800DCA7B6 /* CCTVMPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVMPViewController.h; sourceTree = "<group>"; };
+		F60CC91B14F3381800DCA7B6 /* CCTVMPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVMPViewController.m; sourceTree = "<group>"; };
+		F60CC91D14F33A7F00DCA7B6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F62D4B8814DBC376006CEC89 /* CCTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVViewController.h; sourceTree = "<group>"; };
 		F62D4B8914DBC376006CEC89 /* CCTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVViewController.m; sourceTree = "<group>"; };
 		F62D4B8D14DBC68D006CEC89 /* CCTVPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVPlayerLayerView.h; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60CC91E14F33A7F00DCA7B6 /* MediaPlayer.framework in Frameworks */,
 				F63D440014E503C400632EBE /* CoreData.framework in Frameworks */,
 				F6E10AFC14E0CB210047B8BE /* CoreMedia.framework in Frameworks */,
 				F62D4B9114DBC779006CEC89 /* AVFoundation.framework in Frameworks */,
@@ -140,6 +146,8 @@
 				F62D4B8914DBC376006CEC89 /* CCTVViewController.m */,
 				F62D4B8D14DBC68D006CEC89 /* CCTVPlayerLayerView.h */,
 				F62D4B8E14DBC68D006CEC89 /* CCTVPlayerLayerView.m */,
+				F60CC91A14F3381800DCA7B6 /* CCTVMPViewController.h */,
+				F60CC91B14F3381800DCA7B6 /* CCTVMPViewController.m */,
 			);
 			name = CCTVAVPlayer;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 		F6A16C5F1495CE9100E0C6C5 = {
 			isa = PBXGroup;
 			children = (
+				F60CC91D14F33A7F00DCA7B6 /* MediaPlayer.framework */,
 				F6A16C741495CE9200E0C6C5 /* BuildingMax */,
 				F6A16C6D1495CE9200E0C6C5 /* Frameworks */,
 				F6A16C6B1495CE9200E0C6C5 /* Products */,
@@ -315,6 +324,7 @@
 				F63D440E14E50F6700632EBE /* Device.m in Sources */,
 				F6B07E4314E8E73F00FDD485 /* CCTVHelper.m in Sources */,
 				F60179FA14EB88E700CB0D32 /* CCTVEditTableViewController.m in Sources */,
+				F60CC91C14F3381800DCA7B6 /* CCTVMPViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
