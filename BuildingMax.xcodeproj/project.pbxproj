@@ -19,6 +19,11 @@
 		F63D440814E509A700632EBE /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D440714E509A700632EBE /* CoreDataTableViewController.m */; };
 		F63D440B14E50EC000632EBE /* CCTVDevice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F63D440914E50EBF00632EBE /* CCTVDevice.xcdatamodeld */; };
 		F63D440E14E50F6700632EBE /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = F63D440D14E50F6700632EBE /* Device.m */; };
+		F681FB1E14F4C0C000649D2B /* CorePlotHeaders in Resources */ = {isa = PBXBuildFile; fileRef = F681FB1D14F4C0C000649D2B /* CorePlotHeaders */; };
+		F681FB2014F4C0C800649D2B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F681FB1F14F4C0C800649D2B /* libCorePlot-CocoaTouch.a */; };
+		F681FB2514F4C18700649D2B /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F681FB2214F4C18700649D2B /* BarChartViewController.m */; };
+		F681FB2614F4C18700649D2B /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F681FB2414F4C18700649D2B /* PieChartViewController.m */; };
+		F681FB2914F4C24900649D2B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F681FB2814F4C24900649D2B /* QuartzCore.framework */; };
 		F6A16C6F1495CE9200E0C6C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */; };
 		F6A16C711495CE9200E0C6C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C701495CE9200E0C6C5 /* Foundation.framework */; };
 		F6A16C731495CE9200E0C6C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A16C721495CE9200E0C6C5 /* CoreGraphics.framework */; };
@@ -62,6 +67,13 @@
 		F63D440A14E50EC000632EBE /* CCTVDevice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CCTVDevice.xcdatamodel; sourceTree = "<group>"; };
 		F63D440C14E50F6700632EBE /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = ../Device.h; sourceTree = "<group>"; };
 		F63D440D14E50F6700632EBE /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = ../Device.m; sourceTree = "<group>"; };
+		F681FB1D14F4C0C000649D2B /* CorePlotHeaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CorePlotHeaders; sourceTree = "<group>"; };
+		F681FB1F14F4C0C800649D2B /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		F681FB2114F4C18700649D2B /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
+		F681FB2214F4C18700649D2B /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		F681FB2314F4C18700649D2B /* PieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
+		F681FB2414F4C18700649D2B /* PieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
+		F681FB2814F4C24900649D2B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F6A16C6A1495CE9200E0C6C5 /* BuildingMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A16C6E1495CE9200E0C6C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F6A16C701495CE9200E0C6C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F681FB2914F4C24900649D2B /* QuartzCore.framework in Frameworks */,
 				F60CC91E14F33A7F00DCA7B6 /* MediaPlayer.framework in Frameworks */,
 				F63D440014E503C400632EBE /* CoreData.framework in Frameworks */,
 				F6E10AFC14E0CB210047B8BE /* CoreMedia.framework in Frameworks */,
@@ -106,6 +119,7 @@
 				F6A16C6F1495CE9200E0C6C5 /* UIKit.framework in Frameworks */,
 				F6A16C711495CE9200E0C6C5 /* Foundation.framework in Frameworks */,
 				F6A16C731495CE9200E0C6C5 /* CoreGraphics.framework in Frameworks */,
+				F681FB2014F4C0C800649D2B /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +178,20 @@
 			name = "CCTV CoreData";
 			sourceTree = "<group>";
 		};
+		F681FB2714F4C19100649D2B /* Statistics Chart */ = {
+			isa = PBXGroup;
+			children = (
+				F681FB2114F4C18700649D2B /* BarChartViewController.h */,
+				F681FB2214F4C18700649D2B /* BarChartViewController.m */,
+				F681FB2314F4C18700649D2B /* PieChartViewController.h */,
+				F681FB2414F4C18700649D2B /* PieChartViewController.m */,
+			);
+			name = "Statistics Chart";
+			sourceTree = "<group>";
+		};
 		F6A16C5F1495CE9100E0C6C5 = {
 			isa = PBXGroup;
 			children = (
-				F60CC91D14F33A7F00DCA7B6 /* MediaPlayer.framework */,
 				F6A16C741495CE9200E0C6C5 /* BuildingMax */,
 				F6A16C6D1495CE9200E0C6C5 /* Frameworks */,
 				F6A16C6B1495CE9200E0C6C5 /* Products */,
@@ -185,6 +209,8 @@
 		F6A16C6D1495CE9200E0C6C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F681FB2814F4C24900649D2B /* QuartzCore.framework */,
+				F60CC91D14F33A7F00DCA7B6 /* MediaPlayer.framework */,
 				F63D43FF14E503C400632EBE /* CoreData.framework */,
 				F62D4B9014DBC778006CEC89 /* AVFoundation.framework */,
 				F6E10AFB14E0CB210047B8BE /* CoreMedia.framework */,
@@ -198,6 +224,7 @@
 		F6A16C741495CE9200E0C6C5 /* BuildingMax */ = {
 			isa = PBXGroup;
 			children = (
+				F681FB2714F4C19100649D2B /* Statistics Chart */,
 				F6BCCBD914A06DD700C7F0A5 /* FireAlarmViewController.h */,
 				F6BCCBDA14A06DD700C7F0A5 /* FireAlarmViewController.m */,
 				F6BCCBDC14A06E1F00C7F0A5 /* AirConditioningViewController.h */,
@@ -217,6 +244,8 @@
 		F6A16C751495CE9200E0C6C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F681FB1F14F4C0C800649D2B /* libCorePlot-CocoaTouch.a */,
+				F681FB1D14F4C0C000649D2B /* CorePlotHeaders */,
 				F6A16C7D1495CE9200E0C6C5 /* BuildingMaxAppDelegate.h */,
 				F6A16C7E1495CE9200E0C6C5 /* BuildingMaxAppDelegate.m */,
 				F6A16C761495CE9200E0C6C5 /* BuildingMax-Info.plist */,
@@ -298,6 +327,7 @@
 				F6A16C901495CE9200E0C6C5 /* second@2x.png in Resources */,
 				F6BCCBE214A07A9F00C7F0A5 /* segmentedBackground.png in Resources */,
 				F6F3A4D814EE4ABD00546574 /* Galaxy-1.jpg in Resources */,
+				F681FB1E14F4C0C000649D2B /* CorePlotHeaders in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +355,8 @@
 				F6B07E4314E8E73F00FDD485 /* CCTVHelper.m in Sources */,
 				F60179FA14EB88E700CB0D32 /* CCTVEditTableViewController.m in Sources */,
 				F60CC91C14F3381800DCA7B6 /* CCTVMPViewController.m in Sources */,
+				F681FB2514F4C18700649D2B /* BarChartViewController.m in Sources */,
+				F681FB2614F4C18700649D2B /* PieChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +433,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BuildingMax/BuildingMax-Prefix.pch";
 				INFOPLIST_FILE = "BuildingMax/BuildingMax-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BuildingMax\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,6 +449,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BuildingMax/BuildingMax-Prefix.pch";
 				INFOPLIST_FILE = "BuildingMax/BuildingMax-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BuildingMax\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

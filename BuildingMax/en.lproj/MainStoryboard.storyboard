@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wT7-Hl-jbo">
-                                <rect key="frame" x="81" y="128" width="159" height="64"/>
+                                <rect key="frame" x="81" y="107" width="159" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="火灾报警">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fK1-qL-UmD">
-                                <rect key="frame" x="81" y="225" width="159" height="64"/>
+                                <rect key="frame" x="81" y="204" width="159" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="视频监控">
@@ -43,8 +43,23 @@
                                     <segue destination="zH0-k6-pKM" kind="push" identifier="ShowCCTVTableView" id="9BM-G0-TaG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LaA-TH-QsB">
+                                <rect key="frame" x="81" y="298" width="159" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="数据报表">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mtV-vo-uFq" kind="push" id="v78-Ag-aky"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="We4-kD-syx">
-                                <rect key="frame" x="81" y="30" width="159" height="64"/>
+                                <rect key="frame" x="81" y="9" width="159" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="空调系统">
@@ -66,7 +81,7 @@
                     </navigationItem>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1080" y="-138"/>
+            <point key="canvasLocation" x="1036" y="-138"/>
         </scene>
         <scene sceneID="e08-od-aEg">
             <objects>
@@ -540,12 +555,123 @@
             </objects>
             <point key="canvasLocation" x="2405" y="4"/>
         </scene>
+        <scene sceneID="LfT-Uc-6gY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLT-bh-BMD" sceneMemberID="firstResponder"/>
+                <viewController id="L2S-ks-Ll1" customClass="BarChartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oJ1-R0-gBD" customClass="CPTGraphHostingView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bar" id="jPc-WA-aCu"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1374" y="321"/>
+        </scene>
+        <scene sceneID="eoK-1W-dFP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MaU-Yb-scF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="6QL-GL-Gmh" customClass="PieChartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZw-m6-q2w" customClass="CPTGraphHostingView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pie" id="gOA-8j-Brw"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1396" y="710"/>
+        </scene>
+        <scene sceneID="C76-z9-eiz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lga-rj-A5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController hidesBottomBarWhenPushed="YES" id="mtV-vo-uFq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="waS-2T-ayc"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sp0-tF-hik">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="L2S-ks-Ll1" kind="relationship" relationship="viewControllers" id="dmu-oG-Vko"/>
+                        <segue destination="6QL-GL-Gmh" kind="relationship" relationship="viewControllers" id="zAr-Uv-B6t"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="1104" y="434"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Galaxy-1.jpg" width="3200" height="2000"/>
         <image name="first" width="16" height="16"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AirConditioningViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AirConditioningViewController.h"/>
+        </class>
+        <class className="BarChartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarChartViewController.h"/>
+        </class>
+        <class className="BuildingMaxFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMaxFirstViewController.h"/>
+        </class>
+        <class className="BuildingMaxSecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMaxSecondViewController.h"/>
+        </class>
+        <class className="CCTVAddTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVAddTableViewController.h"/>
+        </class>
+        <class className="CCTVDetailTableViewController" superclassName="CCTVAddTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVDetailTableViewController.h"/>
+        </class>
+        <class className="CCTVEditTableViewController" superclassName="CCTVAddTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVEditTableViewController.h"/>
+        </class>
+        <class className="CCTVMPViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVMPViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="embeddedPlayerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CCTVPlayerLayerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVPlayerLayerView.h"/>
+        </class>
+        <class className="CCTVTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVTableViewController.h"/>
+        </class>
+        <class className="CCTVViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="CCTVPlayerLayerView" candidateClass="CCTVPlayerLayerView"/>
+                <relationship kind="outlet" name="URLTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fullScreenButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="loadButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="timeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="CPTGraphHostingView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CPTGraphHostingView.h"/>
+        </class>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="FireAlarmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FireAlarmViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PieChartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PieChartViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
