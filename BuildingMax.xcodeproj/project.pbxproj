@@ -295,7 +295,7 @@
 		F6A16C611495CE9100E0C6C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = F6A16C641495CE9100E0C6C5 /* Build configuration list for PBXProject "BuildingMax" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -453,6 +453,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/BuildingMax\"",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

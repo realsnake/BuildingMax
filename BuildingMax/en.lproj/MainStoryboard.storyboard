@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
     </dependencies>
     <scenes>
+        <!--Building Max First View Controller - First-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -83,6 +84,7 @@
             </objects>
             <point key="canvasLocation" x="1036" y="-138"/>
         </scene>
+        <!--Air Conditioning View Controller - 空调系统-->
         <scene sceneID="e08-od-aEg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7f-XQ-plu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,6 +99,7 @@
             </objects>
             <point key="canvasLocation" x="1526" y="-485"/>
         </scene>
+        <!--View Controller-->
         <scene sceneID="LCY-du-H2E">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aM1-xs-sFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +134,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" id="1Li-QX-0Nn">
-                                <rect key="frame" x="0.0" y="138" width="320" height="230"/>
+                                <rect key="frame" x="0.0" y="159" width="320" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -147,6 +150,7 @@
             </objects>
             <point key="canvasLocation" x="2057" y="-516"/>
         </scene>
+        <!--Fire Alarm View Controller - 火灾报警-->
         <scene sceneID="pwB-6l-Jiw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3L-Sh-zzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,6 +181,7 @@
             </objects>
             <point key="canvasLocation" x="1603" y="-402"/>
         </scene>
+        <!--Table View Controller - 视频监控-->
         <scene sceneID="di5-IB-Shd">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3K-YS-wh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,14 +198,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlO-dH-uLw">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="tlO-dH-uLw">
                                             <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5TW-9y-w1b">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="5TW-9y-w1b">
                                             <rect key="frame" x="10" y="24" width="36" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -237,6 +242,7 @@
             </objects>
             <point key="canvasLocation" x="1546" y="198"/>
         </scene>
+        <!--Edit Table View Controller - 编辑设备-->
         <scene sceneID="CCZ-qq-7Mr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-95-gg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,6 +285,7 @@
             </objects>
             <point key="canvasLocation" x="2485" y="103"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -299,6 +306,7 @@
             </objects>
             <point key="canvasLocation" x="223" y="156"/>
         </scene>
+        <!--View Controller-->
         <scene sceneID="n0Z-8a-73P">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMB-A5-6rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,6 +397,7 @@
             </objects>
             <point key="canvasLocation" x="2151" y="-84"/>
         </scene>
+        <!--Building Max Second View Controller - 关于我们-->
         <scene sceneID="03G-70-wyA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ka-9e-37P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,6 +428,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="522"/>
         </scene>
+        <!--Navigation Controller - 集成系统菜单-->
         <scene sceneID="Jtv-ic-Swp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mvo-on-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,6 +447,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="4e0-Xc-0ua">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adv-nh-uvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -454,6 +465,7 @@
             </objects>
             <point key="canvasLocation" x="2089" y="621"/>
         </scene>
+        <!--Add Table View Controller - 添加设备-->
         <scene sceneID="dYS-un-RNf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfl-an-ZZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,6 +508,7 @@
             </objects>
             <point key="canvasLocation" x="2485" y="710"/>
         </scene>
+        <!--Detail Table View Controller - 设备信息-->
         <scene sceneID="0z7-EF-eBY">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUo-c7-Gvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,7 +525,7 @@
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O8b-7U-sn0">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="O8b-7U-sn0">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -538,6 +551,7 @@
             </objects>
             <point key="canvasLocation" x="2219" y="69"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="cBw-Fy-riZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqz-C6-CF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -555,6 +569,7 @@
             </objects>
             <point key="canvasLocation" x="2405" y="4"/>
         </scene>
+        <!--Bar Chart View Controller - Bar-->
         <scene sceneID="LfT-Uc-6gY">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLT-bh-BMD" sceneMemberID="firstResponder"/>
@@ -569,6 +584,7 @@
             </objects>
             <point key="canvasLocation" x="1374" y="321"/>
         </scene>
+        <!--Pie Chart View Controller - Pie-->
         <scene sceneID="eoK-1W-dFP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaU-Yb-scF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -583,6 +599,7 @@
             </objects>
             <point key="canvasLocation" x="1396" y="710"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="C76-z9-eiz">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lga-rj-A5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
