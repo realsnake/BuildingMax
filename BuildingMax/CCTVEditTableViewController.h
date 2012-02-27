@@ -14,7 +14,7 @@
 
 @interface CCTVEditTableViewController : CCTVAddTableViewController
 
-@property (nonatomic, strong) Device *editDevice;
+@property (nonatomic, weak) Device *editDevice; // Use weak pointer to refer to device passed by detail view controller.
 @property (nonatomic, weak) id <CCTVEditDelegate> editDelegate;
 
 @end

@@ -12,5 +12,5 @@
 #import "Device.h"
 
 @interface CCTVDetailTableViewController : CCTVAddTableViewController <CCTVEditDelegate>
-@property (nonatomic, strong) Device *selectedDevice;
+@property (nonatomic, weak) Device *selectedDevice; // Weak pointer refer to the device passed by list view controller.
 @end
