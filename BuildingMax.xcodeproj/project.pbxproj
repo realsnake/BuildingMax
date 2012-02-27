@@ -403,6 +403,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -422,6 +423,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -437,7 +439,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/BuildingMax\"",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-all_load",
+					"-Wall",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,8 +458,12 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/BuildingMax\"",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-all_load",
+					"-Wall",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
