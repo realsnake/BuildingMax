@@ -12,5 +12,4 @@
 
 @interface CCTVTableViewController : CoreDataTableViewController <CCTVAddDelegate>
 
-@property (nonatomic, strong) UIManagedDocument *CCTVDatabase;
 @end

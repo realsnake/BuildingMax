@@ -17,7 +17,6 @@
 
 @implementation CCTVTableViewController
 
-@synthesize CCTVDatabase = _CCTVDatabase;
 @synthesize deviceToPush = _deviceToPush;
 
 - (void)didReceiveMemoryWarning
