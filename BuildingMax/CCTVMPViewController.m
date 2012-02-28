@@ -26,13 +26,18 @@
 
 - (void)createAndConfigurePlayerWithURL:(NSURL *)URL
 {
+    URL = [NSURL URLWithString:@"http://movies.apple.com/media/us/mac/ilife/imovie/2009/tutorials/apple-ilife-imovie-intro_imovie_09-us-20090122_r640-10cie.mov?width=640&amp;height=400"];
     MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:URL];
     
     if (player) {
         self.CCTVMoviePlayerController = player;
         
         player.view.frame = self.embeddedPlayerView.frame;
-        player.movieSourceType = MPMovieSourceTypeStreaming;
+        
+        // URL can be a network file, e.g. http://www.businessfactors.de/bfcms/images/stories/videos/defaultscreenvideos.mp4
+        // also can be a streaming file point to an index file. 
+        // So we don't specify the Type here.
+        //player.movieSourceType = MPMovieSourceTypeStreaming;
         
         /* To present a movie in your application, incorporate the view contained 
          in a movie player’s view property into your application’s view hierarchy. 
