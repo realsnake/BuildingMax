@@ -32,27 +32,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - text field delegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSInteger nextTag = textField.tag +1;
-
-    if (nextTag <= SECTION_NUMBER)
-    {
-        UIResponder *nextResponder = [self.view viewWithTag:nextTag];
-        // Notice: if don't call resiganFirstResponder here, the keyboard will overlap the textfield.
-        [textField resignFirstResponder];
-        [nextResponder becomeFirstResponder];
-    }
-    else
-    {
-        [textField resignFirstResponder];
-    }
-    // Do not insert line-breaks.
-    return NO;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -105,6 +84,8 @@
 
     textField.delegate = self;
     textField.tag = indexPath.section;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     if ((SECTION_NUMBER - 1) == indexPath.section) {
         textField.returnKeyType = UIReturnKeyDone;
@@ -243,6 +224,88 @@
 }
 
 #pragma mark - UITextField delegate
+
+- (BOOL)validateIP:(NSString *)IPString
+{
+    unsigned int ipQuads[4];
+    const char *ipAddress = [IPString cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    sscanf(ipAddress, "%u.%u.%u.%u", &ipQuads[0], &ipQuads[1], &ipQuads[2], &ipQuads[3]);
+    
+    for (int quad = 0; quad < 4; quad++) {
+        if ( ipQuads[quad] > 255) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSInteger nextTag = textField.tag + 1;
+
+    switch (textField.tag)
+    {
+        case SECTION_INFO:
+        {
+            UIResponder *nextResponder = [self.view viewWithTag:nextTag];
+            // Notice: if don't call resiganFirstResponder here, the keyboard will overlap the textfield.
+            [textField resignFirstResponder];
+            [nextResponder becomeFirstResponder];
+
+            break;
+        }
+            
+        case SECTION_IP:
+        {
+            if (FALSE == [self validateIP:textField.text])
+            {
+                NSString *localizedDescription = NSLocalizedString(@"无效IP地址", @"无效IP地址");
+                NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+                NSError *portError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+                [self presentAlertView:portError];
+                
+                textField.text = nil;
+            }
+            else {
+                UIResponder *nextResponder = [self.view viewWithTag:nextTag];
+                // Notice: if don't call resiganFirstResponder here, the keyboard will overlap the textfield.
+                [textField resignFirstResponder];
+                [nextResponder becomeFirstResponder];
+            }
+            break;
+        }
+            
+        case SECTION_PORT:
+        {
+            NSCharacterSet *setWithoutNumbers = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+            NSRange range = [textField.text rangeOfCharacterFromSet:setWithoutNumbers];
+            int portNumber = [textField.text intValue];
+            
+            // Port valid value is between 0 and 65535
+            // Only digital number is allowed.
+            if ((portNumber > 65535 || portNumber <= 0) || (range.location != NSNotFound))
+            {
+                NSString *localizedDescription = NSLocalizedString(@"端口号无效", @"端口号无效描述");
+                NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+                NSError *portError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+                [self presentAlertView:portError];
+                
+                textField.text = nil;
+            }
+            else {
+                [textField resignFirstResponder];
+            }
+            break;
+        }
+            
+        default:
+            break;
+    }
+    
+    return YES;
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     switch (textField.tag)
@@ -262,25 +325,6 @@
         case SECTION_PORT:
         {
             self.addDevicePort = [NSNumber numberWithInt:[textField.text intValue]];
-            
-            // we should not alert if no input, say user canceled.
-            if ([textField.text length]) {
-                NSCharacterSet *setWithoutNumbers = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
-                NSRange range = [textField.text rangeOfCharacterFromSet:setWithoutNumbers];
-                int portNumber = [textField.text intValue];
-                
-                // Port valid value is between 0 and 65535
-                // Only digital number is allowed.
-                if ((portNumber > 65535 || portNumber <= 0) || (range.location != NSNotFound))
-                {
-                    NSString *localizedDescription = NSLocalizedString(@"端口号无效", @"端口号无效描述");
-                    NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
-                    NSError *portError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
-                    [self presentAlertView:portError];
-                    
-                    textField.text = nil;
-                }
-            }
             break;
         }
             

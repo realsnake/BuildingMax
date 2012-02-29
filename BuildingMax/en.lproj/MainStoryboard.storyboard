@@ -506,7 +506,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2485" y="710"/>
+            <point key="canvasLocation" x="2438" y="689"/>
         </scene>
         <!--Detail Table View Controller - 设备信息-->
         <scene sceneID="0z7-EF-eBY">
@@ -624,75 +624,6 @@
         <image name="first" width="16" height="16"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AirConditioningViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AirConditioningViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView1" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="webView2" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="BarChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarChartViewController.h"/>
-        </class>
-        <class className="BuildingMaxFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMaxFirstViewController.h"/>
-        </class>
-        <class className="BuildingMaxSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMaxSecondViewController.h"/>
-        </class>
-        <class className="CCTVAddTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVAddTableViewController.h"/>
-        </class>
-        <class className="CCTVDetailTableViewController" superclassName="CCTVAddTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVDetailTableViewController.h"/>
-        </class>
-        <class className="CCTVEditTableViewController" superclassName="CCTVAddTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVEditTableViewController.h"/>
-        </class>
-        <class className="CCTVMPViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVMPViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="embeddedPlayerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CCTVPlayerLayerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVPlayerLayerView.h"/>
-        </class>
-        <class className="CCTVTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVTableViewController.h"/>
-        </class>
-        <class className="CCTVViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCTVViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="CCTVPlayerLayerView" candidateClass="CCTVPlayerLayerView"/>
-                <relationship kind="outlet" name="URLTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fullScreenButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="loadButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="timeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="CPTGraphHostingView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CPTGraphHostingView.h"/>
-        </class>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="FireAlarmViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FireAlarmViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PieChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PieChartViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
