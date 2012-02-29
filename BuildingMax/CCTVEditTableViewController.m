@@ -117,25 +117,6 @@
         case SECTION_PORT:
         {
             self.editDevice.port = [NSNumber numberWithInt:[textField.text intValue]];
-            
-            // we should not alert if no input, say user canceled.
-            if ([textField.text length]) {
-                NSCharacterSet *setWithoutNumbers = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
-                NSRange range = [textField.text rangeOfCharacterFromSet:setWithoutNumbers];
-                int portNumber = [textField.text intValue];
-                
-                // Port valid value is between 0 and 65535
-                // Only digital number is allowed.
-                if ((portNumber > 65535 || portNumber <= 0) || (range.location != NSNotFound))
-                {
-                    NSString *localizedDescription = NSLocalizedString(@"端口号无效", @"端口号无效描述");
-                    NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
-                    NSError *portError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
-                    [self presentAlertView:portError];
-                    
-                    textField.text = nil;
-                }
-            }
             break;
         }
             

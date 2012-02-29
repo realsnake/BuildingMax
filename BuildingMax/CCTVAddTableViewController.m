@@ -227,9 +227,16 @@
 
 - (BOOL)validateIP:(NSString *)IPString
 {
+    // valid IP address contains only characters in "0123456789."
+    NSCharacterSet *invalidIPSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
+    NSRange range = [IPString rangeOfCharacterFromSet:invalidIPSet];
+    if (range.location != NSNotFound) {
+        return FALSE;
+    }
+
+    // validate IP address value
     unsigned int ipQuads[4];
-    const char *ipAddress = [IPString cStringUsingEncoding:NSUTF8StringEncoding];
-    
+    const char *ipAddress = [IPString cStringUsingEncoding:NSUTF8StringEncoding];    
     sscanf(ipAddress, "%u.%u.%u.%u", &ipQuads[0], &ipQuads[1], &ipQuads[2], &ipQuads[3]);
     
     for (int quad = 0; quad < 4; quad++) {

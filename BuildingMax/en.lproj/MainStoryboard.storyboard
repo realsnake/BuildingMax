@@ -247,7 +247,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-95-gg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ohr-wE-Gqy" customClass="CCTVEditTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DRL-Vv-kBz">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DRL-Vv-kBz">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -283,7 +283,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2485" y="103"/>
+            <point key="canvasLocation" x="2559" y="104"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -470,7 +470,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfl-an-ZZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ado-1J-d1H" customClass="CCTVAddTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kvo-fb-FKN">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kvo-fb-FKN">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -567,7 +567,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2405" y="4"/>
+            <point key="canvasLocation" x="2511" y="8"/>
         </scene>
         <!--Bar Chart View Controller - Bar-->
         <scene sceneID="LfT-Uc-6gY">
