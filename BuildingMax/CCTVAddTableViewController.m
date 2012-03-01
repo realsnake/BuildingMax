@@ -171,11 +171,11 @@
     for (UITextField *textField in textFieldArray) {
         // Blank field is not allowed.
         if (0 == [textField.text length]) {
-            return NO;
+            return YES;
         }
     }
     
-    return YES;
+    return NO;
 }
 
 - (void)presentAlertView:(NSError *)error
@@ -192,6 +192,13 @@
 {
     if ([self isTextFieldBlank])
     {
+        NSString *localizedDescription = NSLocalizedString(@"请填写完整", @"信息不完整描述");
+        NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+        NSError *blankError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+        [self presentAlertView:blankError];    }
+    else
+    {
+        
         [CCTVHelper openSharedManagedDocumentUsingBlock:^(UIManagedDocument *sharedManagedDocument) {
             if (sharedManagedDocument) {
                 [sharedManagedDocument.managedObjectContext performBlock:^{
@@ -204,16 +211,8 @@
         
         // Not used for now.
         //[self.delegate AddNewEntity:self];
-
+        
         [self dismissModalViewControllerAnimated:YES];
-    }
-    else
-    {
-        NSString *localizedDescription = NSLocalizedString(@"请填写完整", @"信息不完整描述");
-        NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
-        NSError *blankError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
-        [self presentAlertView:blankError];
-
     }
     
 }
@@ -234,8 +233,13 @@
         return FALSE;
     }
 
+    // string separated by "." should has 4 segments for an valid IP address
+    if ([[IPString componentsSeparatedByString:@"."] count] != 4) {
+        return FALSE;
+    }
+
     // validate IP address value
-    unsigned int ipQuads[4];
+    unsigned int ipQuads[4] = {256,256,256,256};    // invalid default value
     const char *ipAddress = [IPString cStringUsingEncoding:NSUTF8StringEncoding];    
     sscanf(ipAddress, "%u.%u.%u.%u", &ipQuads[0], &ipQuads[1], &ipQuads[2], &ipQuads[3]);
     

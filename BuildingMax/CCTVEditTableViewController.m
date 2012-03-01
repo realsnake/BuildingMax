@@ -26,12 +26,45 @@
 }
 
 #pragma mark - button action
+- (BOOL)isTextFieldBlank
+{
+    // Find all the UITextField in the subviews
+    NSMutableArray *textFieldArray = [[NSMutableArray alloc] init];
+    for (UITableViewCell *tableViewCell in self.view.subviews ) {
+        if ([tableViewCell isKindOfClass:[UITableViewCell class]]) {
+            for (UITextField *textFieldInCell in tableViewCell.contentView.subviews) {
+                if ([textFieldInCell isKindOfClass:[UITextField class]]) {
+                    [textFieldArray addObject:textFieldInCell];
+                }
+            }
+        }
+    }
+    
+    for (UITextField *textField in textFieldArray) {
+        // Blank field is not allowed.
+        if (0 == [textField.text length]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (IBAction)save:(id)sender
 {
-    // Just save to modify the same device.
-    [self.editDelegate saveForEditDevice:self];
-    
-    [self dismissModalViewControllerAnimated:YES];
+    if ([self isTextFieldBlank]) {
+        NSString *localizedDescription = NSLocalizedString(@"请填写完整", @"信息不完整描述");
+        NSDictionary *errorDictionary = [NSDictionary dictionaryWithObjectsAndKeys:localizedDescription, NSLocalizedDescriptionKey, nil];
+        NSError *blankError = [NSError errorWithDomain:@"BuildingMax" code:0 userInfo:errorDictionary];
+        [self presentAlertView:blankError];
+    }
+    else {
+        // Just save to modify the same device.
+        [self.editDelegate saveForEditDevice:self];
+        
+        [self dismissModalViewControllerAnimated:YES];
+    }
+
     
 }
 
